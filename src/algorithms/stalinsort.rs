@@ -1,3 +1,5 @@
+//! Is a capitalist spy hiding in your vector?
+
 #[cfg(test)]
 mod tests {
     use crate::stalinsort;
@@ -31,7 +33,10 @@ mod tests {
     }
 }
 
-
+/// Iterates over the vector and removes all elements that are out of order.
+/// If an element in the vector is out of order it is most likely a filthy capitalist
+/// saboteur keeping your honest and hard working data from being in order.
+/// The given vector will be modified in place.
 pub fn stalinsort<T: Ord>(arr: &mut Vec<T>) {
     if arr.is_empty() {
         return;

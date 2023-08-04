@@ -1,7 +1,15 @@
 [package]
 name = "atrocious_sort"
 version = "0.1.0"
+authors = ["Christian Schult <christian-schult@outlook.de>"]
 edition = "2021"
+license-file = "LICENSE"
+description = "Some of the most useless sorting algorithms implemented in Rust."
+readme = "README.md"
+repository = "https://github.com/Chromfalke/AtrociousSort"
+keywords = ["silly", "useless", "sort"]
+categories = ["algorithms"]
+
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
