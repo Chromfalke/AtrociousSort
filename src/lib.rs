@@ -18,7 +18,8 @@
 //! ## Examples
 //! 
 //! ```rust
-//! use atrosious_sort::stalinsort;
+//! extern crate atrocious_sort;
+//! use atrocious_sort::stalinsort;
 //! 
 //! fn main() {
 //!     let mut data = vec![1, 2, 3, 2, 1];
