@@ -11,10 +11,6 @@
 //! Corrently implemented algorithms
 //! - Stalinsort
 //! 
-//! ## License
-//! 
-//! See the license file.
-//! 
 //! ## Examples
 //! 
 //! ```rust

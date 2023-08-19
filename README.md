@@ -1,6 +1,18 @@
 # AtrociousSort
 This project's purpose is to provide Rust with blazingly fast (not guaranteed) implementations of some of the most useless sorting algorithms out there.
 
+List of planned algorithms
+- Inteligent Design Sort
+- Sleep Sort
+- Slow Sort
+- Bogo Sort
+- Bozo Sort
+- Bogobogo Sort
+- Quantum Bogo Sort
+- Schrodinger's Sort
+- Tableflip Sort (╯°□°)╯︵ ┻━┻
+- Stooge Sort
+
 List of implemented algorithms
 - Stalinsort
 
