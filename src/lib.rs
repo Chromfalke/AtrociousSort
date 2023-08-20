@@ -27,3 +27,4 @@
 mod algorithms;
 
 pub use algorithms::stalinsort;
+pub use algorithms::intelligent_design_sort;
