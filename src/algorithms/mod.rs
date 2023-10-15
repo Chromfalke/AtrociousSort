@@ -1,5 +1,7 @@
 pub mod stalinsort;
-pub mod inteligent_design_sort;
+pub mod intelligent_design_sort;
+pub mod sleep_sort;
 
 pub use stalinsort::stalinsort;
-pub use inteligent_design_sort::intelligent_design_sort;
+pub use intelligent_design_sort::intelligent_design_sort;
+pub use sleep_sort::sleep_sort;

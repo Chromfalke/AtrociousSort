@@ -2,7 +2,6 @@
 This project's purpose is to provide Rust with blazingly fast (not guaranteed) implementations of some of the most useless sorting algorithms out there.
 
 List of planned algorithms
-- Sleep Sort
 - Slow Sort
 - Bogo Sort
 - Bozo Sort
@@ -15,6 +14,7 @@ List of planned algorithms
 List of implemented algorithms
 - Stalinsort
 - Inteligent Design Sort
+- Sleep Sort
 
 All algorithms contain one or more of the following features
 - has a horrible runtime

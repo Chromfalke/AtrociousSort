@@ -1,4 +1,4 @@
-//! Is a capitalist spy hiding in your vector?
+//! Is a capitalist spy hiding in your data?
 
 #[cfg(test)]
 mod tests {

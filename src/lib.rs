@@ -1,15 +1,17 @@
 //! # Atrocious sort
 //! 
 //! Atrocious sort is a collection of some of the most useless sorting algorithms.
-//! All algorithms can sort all types that implement the
-//! [`Ord`](https://doc.rust-lang.org/stable/std/cmp/trait.Ord.html) trait.
+//! The different algorithms depend on different traits to be implemented for the types
+//! that are to be sorted. The traits are specified in the documentation of each algorithm.
 //! 
 //! Implemented algorithms can only sort in ascending order.
 //! 
 //! ## Algorithms
 //! 
-//! Corrently implemented algorithms
+//! Currently implemented algorithms
 //! - Stalinsort
+//! - Intelligent Design Sort
+//! - Sleep Sort
 //! 
 //! ## Examples
 //! 
@@ -28,3 +30,4 @@ mod algorithms;
 
 pub use algorithms::stalinsort;
 pub use algorithms::intelligent_design_sort;
+pub use algorithms::sleep_sort;
