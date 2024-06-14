@@ -31,3 +31,4 @@ mod algorithms;
 pub use algorithms::stalinsort;
 pub use algorithms::intelligent_design_sort;
 pub use algorithms::sleep_sort;
+pub use algorithms::slowsort;

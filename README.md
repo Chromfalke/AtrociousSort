@@ -2,7 +2,6 @@
 This project's purpose is to provide Rust with blazingly fast (not guaranteed) implementations of some of the most useless sorting algorithms out there.
 
 List of planned algorithms
-- Slow Sort
 - Bogo Sort
 - Bozo Sort
 - Bogobogo Sort
@@ -15,6 +14,7 @@ List of implemented algorithms
 - Stalinsort
 - Inteligent Design Sort
 - Sleep Sort
+- Slowsort
 
 All algorithms contain one or more of the following features
 - has a horrible runtime
@@ -22,7 +22,7 @@ All algorithms contain one or more of the following features
 - might not actually sort an array according to your expectations
 
 ### Motivation
-Essentially, I saw a video on YouTube talking about "unconventional" (completely bonkers) sorting algorithms and wanted to implement some of them that I found interesting. I thought while I was at it I might as well lean fully into the absurdity and implement a resonably performing version of the totally useless algorithms.
+Essentially, I saw a video on YouTube talking about "unconventional" (completely bonkers) sorting algorithms and wanted to implement some of them that I found interesting. Additionally I wanted to use this project for learning how to properly develod and maintain a libraray on crates.io.
 
 ### Usage
 **Warning**: If you intend to use this crate in any serious manner or productive environment you should have your programming privileges revoked.
