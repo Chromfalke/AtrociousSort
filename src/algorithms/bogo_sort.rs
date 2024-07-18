@@ -34,6 +34,9 @@ mod tests {
     }
 }
 
+/// Creates a random permutation of the array until one happens to be sorted.
+/// The longer the array the longer of a brake you can take while you wait for
+/// it to be sorted.
 pub fn bogo_sort<T: Ord + Copy>(arr: &mut [T]) {
     let mut rng = rand::thread_rng();
     while !is_sorted(arr) {
