@@ -2,8 +2,6 @@
 This project's purpose is to provide Rust with blazingly fast (not guaranteed) implementations of some of the most useless sorting algorithms out there.
 
 List of planned algorithms
-- Bozo Sort
-- Bogobogo Sort
 - Quantum Bogo Sort
 - Schrodinger's Sort
 - Tableflip Sort (╯°□°)╯︵ ┻━┻
@@ -15,6 +13,7 @@ List of implemented algorithms
 - Sleep Sort
 - Slowsort
 - Bogo Sort
+- Bogobogo Sort
 
 All algorithms contain one or more of the following features
 - has a horrible runtime

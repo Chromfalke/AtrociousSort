@@ -1,6 +1,6 @@
 [package]
 name = "atrocious_sort"
-version = "0.1.4"
+version = "0.1.5"
 authors = ["Christian Schult <christian-schult@outlook.de>"]
 edition = "2021"
 license = "GPL-3.0-only"

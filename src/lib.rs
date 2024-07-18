@@ -33,3 +33,4 @@ pub use algorithms::intelligent_design_sort;
 pub use algorithms::sleep_sort;
 pub use algorithms::slowsort;
 pub use algorithms::bogo_sort;
+pub use algorithms::bogobogo_sort;
