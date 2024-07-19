@@ -47,7 +47,7 @@ pub fn bogo_sort<T: Ord + Copy>(arr: &mut [T]) {
     }
 }
 
-fn is_sorted<T: Ord>(arr: &[T]) -> bool {
+pub fn is_sorted<T: Ord>(arr: &[T]) -> bool {
     if arr.len() <= 1 {
         return true;
     }

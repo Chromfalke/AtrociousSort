@@ -1,6 +1,8 @@
 //! Because bogo sort is to efficient, right?
 use rand::Rng;
 
+use crate::bogo_sort::{bogo_sort, is_sorted};
+
 #[cfg(test)]
 mod tests {
     use crate::bogobogo_sort;
@@ -34,25 +36,26 @@ mod tests {
     }
 }
 
-/// Sorts all except the last element of an array recursively.
-/// If the last element is not the largest the array will be randomized
-/// and the process will be repeated.
+/// Sorts subarrays of increasing length 2, 3, 4, etc. using bogo sort.
+/// Should at any point any one of these subarrays not be sorted
+/// on the first try, the entire process will be restarted.
 pub fn bogobogo_sort<T: Ord + Copy>(arr: &mut [T]) {
     let length = arr.len();
     if length <= 1 {
         return;
     }
 
+    let mut index = 2;
     let mut rng = rand::thread_rng();
-    loop {
-        bogobogo_sort(&mut arr[0..length - 1]);
-        if arr[length - 2] <= arr[length - 1] {
-            return;
-        } else {
+    while index < length {
+        bogo_sort(&mut arr[0..index]);
+        index += 1;
+        if !is_sorted(&arr[0..index]) {
             for i in 0..arr.len() {
                 let j = rng.gen_range(0..arr.len());
                 arr.swap(i, j);
             }
+            index = 2;
         }
     }
 }

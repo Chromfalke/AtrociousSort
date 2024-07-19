@@ -12,6 +12,8 @@
 //! - Stalinsort
 //! - Intelligent Design Sort
 //! - Sleep Sort
+//! - Bogo Sort
+//! - Bogobogo Sort
 //! 
 //! ## Examples
 //! 
