@@ -14,6 +14,7 @@
 //! - Sleep Sort
 //! - Bogo Sort
 //! - Bogobogo Sort
+//! - Stooge Sort
 //! 
 //! ## Examples
 //! 
@@ -36,3 +37,4 @@ pub use algorithms::sleep_sort;
 pub use algorithms::slowsort;
 pub use algorithms::bogo_sort;
 pub use algorithms::bogobogo_sort;
+pub use algorithms::stoogesort;
