@@ -33,13 +33,13 @@ mod tests {
     }
 }
 
-/// Does not iterate over the vector. Does not modify the vector in any way.
+/// Does not iterate over the slice. Does not modify the slice in any way.
 /// By the design of the Sorter all elements are already exactly where they should be.
 /// To tamper with this blessed order would be nothing short of heresy!
 /// Do not despair if you cannot yet comprehend the purpose of the order the Sorter has
 /// envisioned for you data. In time you shall find enlightenment and understanding.
 /// 
 /// Praise the Sorter!
-pub fn intelligent_design_sort<T>(_arr: & Vec<T>) {
+pub fn intelligent_design_sort<T>(_arr: &mut [T]) {
     return
 }

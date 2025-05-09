@@ -1,5 +1,4 @@
 //! Because bogo sort is to efficient, right?
-use rand::Rng;
 use rand::seq::SliceRandom;
 
 #[cfg(test)]
@@ -41,7 +40,7 @@ mod tests {
 pub fn bogobogo_sort<T: PartialOrd>(arr: &mut [T]) {
     let mut index = 2;
     let mut rng = rand::rng();
-    while index < arr.len() {
+    while index <= arr.len() {
         let slice = &mut arr[..index];
         slice.shuffle(&mut rng);
         if !slice.is_sorted() {
