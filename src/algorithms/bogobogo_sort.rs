@@ -1,7 +1,5 @@
 //! Because bogo sort is to efficient, right?
-use rand::Rng;
-
-use crate::bogo_sort::{bogo_sort, is_sorted};
+use rand::seq::SliceRandom;
 
 #[cfg(test)]
 mod tests {
@@ -39,23 +37,17 @@ mod tests {
 /// Sorts subarrays of increasing length 2, 3, 4, etc. using bogo sort.
 /// Should at any point any one of these subarrays not be sorted
 /// on the first try, the entire process will be restarted.
-pub fn bogobogo_sort<T: Ord + Copy>(arr: &mut [T]) {
-    let length = arr.len();
-    if length <= 1 {
-        return;
-    }
-
+pub fn bogobogo_sort<T: PartialOrd>(arr: &mut [T]) {
     let mut index = 2;
-    let mut rng = rand::thread_rng();
-    while index < length {
-        bogo_sort(&mut arr[0..index]);
-        index += 1;
-        if !is_sorted(&arr[0..index]) {
-            for i in 0..arr.len() {
-                let j = rng.gen_range(0..arr.len());
-                arr.swap(i, j);
-            }
-            index = 2;
+    let mut rng = rand::rng();
+    while index <= arr.len() {
+        let slice = &mut arr[..index];
+        slice.shuffle(&mut rng);
+        if !slice.is_sorted() {
+            // with the increment afterwards the index = 2
+            index = 1
         }
+        
+        index += 1
     }
 }

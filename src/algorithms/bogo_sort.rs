@@ -1,5 +1,5 @@
 //! Are you feeling lucky today?
-use rand::Rng;
+use rand::seq::SliceRandom;
 
 #[cfg(test)]
 mod tests {
@@ -37,24 +37,9 @@ mod tests {
 /// Creates a random permutation of the array until one happens to be sorted.
 /// The longer the array the longer of a brake you can take while you wait for
 /// it to be sorted.
-pub fn bogo_sort<T: Ord + Copy>(arr: &mut [T]) {
-    let mut rng = rand::thread_rng();
-    while !is_sorted(arr) {
-        for i in 0..arr.len() {
-            let j = rng.gen_range(0..arr.len());
-            arr.swap(i, j);
-        }
+pub fn bogo_sort<T: PartialOrd>(arr: &mut [T]) {
+    let mut rng = rand::rng();
+    while !arr.is_sorted() {
+        arr.shuffle(&mut rng)
     }
-}
-
-pub fn is_sorted<T: Ord>(arr: &[T]) -> bool {
-    if arr.len() <= 1 {
-        return true;
-    }
-    for i in 0..arr.len() - 1 {
-        if arr[i] > arr[i + 1] {
-            return false;
-        }
-    }
-    return true;
 }

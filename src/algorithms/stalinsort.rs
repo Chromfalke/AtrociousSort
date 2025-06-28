@@ -37,24 +37,19 @@ mod tests {
 /// If an element in the vector is out of order it is most likely a filthy capitalist
 /// saboteur keeping your honest and hard working data from being in order.
 /// The given vector will be modified in place.
-pub fn stalinsort<T: Ord>(arr: &mut Vec<T>) {
-    if arr.is_empty() {
-        return;
-    }
-
-    let mut length = arr.len() - 1;
-    if length <= 1 {
-        return;
-    }
-
+pub fn stalinsort<T: PartialOrd>(arr: &mut Vec<T>) {
+    let old_len = arr.len();
+    let mut new_len = old_len;
     let mut index = 1;
-    while index <= length {
-        if arr[index] < arr[index - 1] {
-            arr.remove(index);
-            length -= 1;
-        }
-        else {
-            index += 1;
+    
+    while index < new_len {
+        arr.swap(index, (old_len - new_len) + index);
+        
+        match arr[index] < arr[index - 1] { 
+            false => index += 1,
+            true => new_len -= 1,
         }
     }
+    
+    arr.truncate(new_len)
 }

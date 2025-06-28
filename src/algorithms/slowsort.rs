@@ -38,28 +38,27 @@ mod tests {
 /// recursively. Then the last element from both halfs are compared and the
 /// largest will be moved to the end of the vector. The procedure is then
 /// repeated for the rest of the vector excluding the last element.
-pub fn slowsort<T: Ord + Copy>(arr: &mut Vec<T>) {
-    if arr.len() <= 0 {
-        return
-    }
-    _slowsort(arr, 0, arr.len() - 1);
+pub fn slowsort<T: PartialOrd>(arr: &mut [T]) {
+    // this is correct as a slices maximum length is isize::MAX
+    // note this eliminates the top check and makes the code slightly faster
+    slowsort_inner(arr, 0, arr.len() as isize - 1);
 }
 
-fn _slowsort<T: Ord + Copy>(arr: &mut Vec<T>, start: usize, end: usize) {
-    if end <= start {
+#[inline]
+fn slowsort_inner<T: PartialOrd>(arr: &mut [T], start: isize, end: isize) {
+    if start >= end {
         return
     }
-
+    
     let middle = (start + end) / 2;
 
-    _slowsort(arr, start, middle);
-    _slowsort(arr, middle + 1, end);
+    slowsort_inner(arr, start, middle);
+    slowsort_inner(arr, middle + 1, end);
 
-    if arr[middle] > arr[end] {
-        let temp = arr[middle];
-        arr[middle] = arr[end];
-        arr[end] = temp;
+    let (mid, last) = (middle as usize, end as usize);
+    if arr[mid] > arr[last] {
+        arr.swap(mid, last);
     }
 
-    _slowsort(arr, start, end - 1);
+    slowsort_inner(arr, start, end - 1);
 }

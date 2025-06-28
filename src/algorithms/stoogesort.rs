@@ -36,24 +36,31 @@ mod tests {
 /// Swaps the first and the last element if they are not in order.
 /// It will then sort the first two thirds of the array, then the
 /// second to thirds and then the first two thirds again.
-pub fn stoogesort<T: Ord>(arr: &mut [T]) {
-    if arr.len() <= 1 {
-        return;
-    }
-
-    _stoogesort(arr, 0, arr.len()-1);
+pub fn stoogesort<T: PartialOrd>(arr: &mut [T]) {
+    // this is correct as a slices maximum length is isize::MAX
+    // and same as slow sort removes one additional check to make things slightly faster
+    _stoogesort(arr, 0, arr.len() as isize -1);
 }
 
-fn _stoogesort<T: Ord>(arr: &mut [T], start: usize, end: usize) {
-    if arr[start] > arr[end] {
-        arr.swap(start, end);
-    }
 
-    if start+1 >= end {
-        return;
+#[inline]
+fn _stoogesort<T: PartialOrd>(arr: &mut [T], start: isize, end: isize) {
+    if start >= end { 
+        return
     }
-
-    let third = arr.len() / 3;
+    
+    let (first, last) = (start as usize, end as usize);
+    if arr[first] > arr[last] {
+        arr.swap(first, last);
+    }
+    
+    let third = (end - start + 1) / 3;
+    
+    // if there are less than 2 elements in this range return
+    if third <= 0 { 
+        return
+    }
+    
     _stoogesort(arr, start, end - third);
     _stoogesort(arr, start + third, end);
     _stoogesort(arr, start, end - third);
